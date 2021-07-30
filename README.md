@@ -37,3 +37,7 @@ test.py --测试运行代码，在这里对测试集进行测试
 ```onnx_weight = r"./model/HC_mobileV2.onnx" ``` 
 
 PS：自己训练得到的.pkl模型，要经过pytorch_to_onnx__model.py，从pytorch模型转换成onnx的模型（推理速度更快），才能用于测试
+
+## **环境**
+已提供环境依赖清单，requirements.txt，可新建环境后运行以下命令安装  
+```pip install -r requirements.txt ```
