@@ -26,23 +26,24 @@ if __name__ == '__main__':
     3)预测roi
     4)还原分割结果到原大小
     5)后处理，取单一连通域
-    6)计算头围信息，计算FPS
-    7)保存预测图片到指定文件夹，保存头围信息到指定csv
+    6)计算头围信息
+    7）计算FPS
+    8)保存预测图片到指定文件夹，保存头围信息到指定csv
     """
     # 路径设置
-    imgs_path = r'/data/medai05/EDAN2021/data/test_set/images'
-    pix_csv_file = r'/data/medai05/EDAN2021/data/test_set_pixel_size.csv'
-    save_mask_path = r'/data/medai05/EDAN2021/data/test_set/pre_mask'
-    save_img_mask_path = r'/data/medai05/EDAN2021/data/test_set/img_mask'
-    save_csv = r'/data/medai05/EDAN2021/data/test_set_result.csv'
+    imgs_path = r'./data/test_set/images'
+    pix_csv_file = r'./data/test_set_pixel_size.csv'
+    save_mask_path = r'./data/test_set/pre_mask'
+    save_img_mask_path = r'./data/test_set/img_mask'
+    save_csv = r'./data/test_set_result.csv'
     if not os.path.exists(save_mask_path):
         os.makedirs(save_mask_path)
         os.makedirs(save_img_mask_path)
 
     model_type = 0  # 经测试，torch与script的速度差不多，onnx模型的推理速度最快
-    pytorch_weight = r'/data/medai05/EDAN2021/model/HC_mobileV3_100.pkl'    # 记得修改下面的模型
-    script_weight = "/data/medai05/EDAN2021/model/HC_seg_32.pt"
-    onnx_weight = "/data/medai05/EDAN2021/model/HC_mobileV2.onnx"
+    pytorch_weight = r'./model/HC_mobileV2_100.pkl'    # 使用这个要记得修改下面的模型
+    script_weight = r"./model/HC_seg_32.pt"
+    onnx_weight = r"./model/HC_mobileV2.onnx"
     input_size = 256
     batch_size = 2  # bz太大会影响推理速度，2的推理速度比较快
 
@@ -66,7 +67,7 @@ if __name__ == '__main__':
         # 加载pytorch模型
         with torch.no_grad():
             # 构建模型
-            model = smp.Unet(encoder_name="timm-mobilenetv3_small_100", in_channels=1, classes=1)
+            model = smp.Unet(encoder_name="timm-mobilenetv2", in_channels=1, classes=1)
             model.to(device)
             model.load_state_dict(torch.load(pytorch_weight, map_location=device))
             model.eval()

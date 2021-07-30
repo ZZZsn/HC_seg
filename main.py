@@ -132,15 +132,15 @@ if __name__ == '__main__':
     parser.add_argument('--val_step', type=int, default=5)
 
     # misc
-    parser.add_argument('--mode', type=str, default='test', help='train/test')
+    parser.add_argument('--mode', type=str, default='train', help='train/test')
     parser.add_argument('--Task_name', type=str, default='HC_regy64-', help='DIR name,Task name')
     parser.add_argument('--cuda_idx', type=int, default=0)
     parser.add_argument('--DataParallel', type=bool, default=False)
 
     # data-parameters
-    parser.add_argument('--filepath_img', type=str, default='/data/medai05/EDAN2021/data/training_set/images')
-    parser.add_argument('--filepath_mask', type=str, default='/data/medai05/EDAN2021/data/training_set/labels_pre')
-    parser.add_argument('--csv_file', type=str, default='/data/medai05/EDAN2021/data/train.csv')    # 用于分折
+    parser.add_argument('--filepath_img', type=str, default='./data/training_set/images')
+    parser.add_argument('--filepath_mask', type=str, default='./data/training_set/labels_pre')
+    parser.add_argument('--csv_file', type=str, default='./data/train.csv')    # 用于分折
     parser.add_argument('--fold_K', type=int, default=5, help='folds number after divided')
     parser.add_argument('--fold_idx', type=int, default=1)
 

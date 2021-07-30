@@ -41,10 +41,10 @@ def fill_inter_bone_2(mask):
     return mask_fill.astype(np.uint8)
 
 
-train_labels_files_path = '/EDAN2021/data/training_set/labels'
-pix_csv = r'/EDAN2021/data/training_set_pixel_size_and_HC.csv'
-csv_save_path = '/EDAN2021/data/train.csv'                  # 生成的csv文件
-save_folder = '/EDAN2021/data/training_set/labels_pre'      # 保存结果
+train_labels_files_path = './data/training_set/labels'
+pix_csv = r'./data/training_set_pixel_size_and_HC.csv'
+csv_save_path = './data/train.csv'                  # 生成的csv文件
+save_folder = './data/training_set/labels_pre'      # 保存结果
 if not os.path.exists(save_folder):
     os.makedirs(save_folder)
 
