@@ -27,8 +27,8 @@ test.py --测试运行代码，在这里对测试集进行测试
 /data/test_set/pre_mask（测试结果的mask）
 
 ## **训练**
-设置train_valid.py内main函数的相关训练信息，并对应修改solver.py内build_model函数的模型信息
-```encoder_name = "timm-regnety_064" ```
+设置train_valid.py内main函数的相关训练信息，并对应修改solver.py内build_model函数的模型信息  
+```encoder_name = "timm-regnety_064" ```  
 运行train_valid.py，跑完即可在/result内查看训练好的模型  
 
 ## **测试**
