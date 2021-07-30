@@ -1,5 +1,5 @@
 # 基于深度学习的超声胎儿头围分割
-2021理邦竞赛-胎儿头围测量项目Cancel changes
+2021理邦竞赛-胎儿头围测量项目
 
 ## **主要代码描述：**
 
@@ -26,5 +26,5 @@ test.py --测试运行代码，在这里对测试集进行测试
 测试集里将图像放入一个文件夹：/data/test_set/images，测试后将会生成/data/test_set/img_mask（原图上画了椭圆）和/data/test_set/pre_mask（测试结果mask）
 
 ## 测试
-/model里提供了最终使用的模型，分别基于RegNetY-064、RegNetY-002和MobileNetV2，修改test里的模型路径即可  
+/model里提供了最终使用的模型，分别基于RegNetY-064、RegNetY-002和MobileNetV2，修改test里的模型路径即可运行  
 ```onnx_weight = r"./model/HC_mobileV2.onnx" ```
