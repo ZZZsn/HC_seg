@@ -1,18 +1,14 @@
 # 基于深度学习的超声胎儿头围分割
 2021理邦竞赛-胎儿头围测量项目
 
-## **主要代码描述：**
+## **代码功能描述**
+preprocess.py --预处理运行代码  
+train_valid.py --训练运行代码，在这里设置与修改参数  
+solver.py --交叉验证的主体代码，训练验证都在这里，在这里修改使用的模型与损失函数  
+test.py --测试运行代码，在这里对测试集进行测试  
 
-preprocess.py --预处理运行代码
-
-main.py --训练运行代码，在这里设置与修改参数
-
-solver.py --交叉验证的主体代码，训练验证都在这里，在这里修改使用的模型与损失函数
-
-test.py --测试运行代码，在这里对测试集进行测试
 
 ## **数据存放方式**
-
 /data 为所有需要的数据，其中包含以下内容:  
 - training_set  - 训练集数据  
 - test_set  - 测试集数据  
@@ -25,6 +21,10 @@ test.py --测试运行代码，在这里对测试集进行测试
 
 测试集里将图像放入一个文件夹：/data/test_set/images，测试后将会生成/data/test_set/img_mask（原图上画了椭圆）和/data/test_set/pre_mask（测试结果mask）
 
-## 测试
+
+## **训练**
+运行train_valid.py
+
+## **测试**
 /model里提供了最终使用的模型，分别基于RegNetY-064、RegNetY-002和MobileNetV2，修改test里的模型路径即可运行  
 ```onnx_weight = r"./model/HC_mobileV2.onnx" ```
