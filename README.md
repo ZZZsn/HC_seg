@@ -32,12 +32,12 @@ test.py --测试运行代码，在这里对测试集进行测试
 运行train_valid.py，跑完即可在/result内查看训练好的模型  
 
 ## **测试**
-/model里提供了最终使用的onnx模型，分别基于RegNetY-064、RegNetY-002和MobileNetV2
+/model里提供了最终使用的onnx模型，分别基于RegNetY-064、RegNetY-002和MobileNetV2  
 修改test里的模型路径即可运行  
 ```onnx_weight = r"./model/HC_mobileV2.onnx" ``` 
 
 PS：自己训练得到的.pkl模型，要经过pytorch_to_onnx__model.py，从pytorch模型转换成onnx的模型（推理速度更快），才能用于测试
 
 ## **环境**
-已提供环境依赖清单，requirements.txt，可新建环境后运行以下命令安装  
+已提供环境依赖清单，requirements.txt，可新建环境后运行下面的命令安装环境  
 ```pip install -r requirements.txt ```
